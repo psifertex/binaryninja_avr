@@ -2799,7 +2799,7 @@ class Instruction_ROL(Instruction):
                 self._operands[0].symbolic_value,
                 il.rotate_left_carry(
                     1,
-                    self._operands[0].symbolic_value,
+                    il.reg(1, self._operands[0].symbolic_value),
                     il.const(1, 1),
                     il.flag('C'),
                     flags='HSVNZC',
@@ -2820,7 +2820,7 @@ class Instruction_ROR(Instruction):
                 self._operands[0].symbolic_value,
                 il.rotate_right_carry(
                     1,
-                    self._operands[0].symbolic_value,
+                    il.reg(1, self._operands[0].symbolic_value),
                     il.const(1, 1),
                     il.flag('C'),
                     flags='HSVNZC',
